@@ -21,7 +21,7 @@ app.use(morgan("combined"));
 
 // Set application properties
 app.set("host", process.env.HOST || "0.0.0.0");
-app.set("port", process.env.PORT0 || 3000);
+app.set("port", process.env.PORT || 3000);
 app.set("x-powered-by", false);
 app.set("etag", false);
 
@@ -135,6 +135,6 @@ app.get("/health", function(req, res) {
 });
 
 // Start Express.js server
-var server = app.listen(app.get("port"), app.get("host"), function() {
+var server = app.listen(app.get("port"), function() {
     console.log("Express server listening on port " + server.address().port + " on " + server.address().address);
 });
